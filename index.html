@@ -1675,9 +1675,12 @@ header.site nav.main a.nav-wa{box-shadow:0 0 4px rgba(0,255,102,.4), 0 0 10px rg
 .bukti-modal .detail-order{background:#00FF66;color:#000;border:2px solid #0E2A47;border-radius:999px;box-shadow:0 0 6px rgba(0,255,102,.65), 0 0 14px rgba(0,255,102,.25)}
 </style>
 <style id="perbaiki-6-item-53299">
-/* 53299: (item 4) tombol button asli menggelap saat ditekan (diukur: putih #FFFFFF -> #EEF7F4); tautan a.btn tidak berubah sama sekali. Aturan ini mengembalikan rasa tekan itu. (item 5) di modal Tes HP lengkung 280px menutupi teks progres; perkecil ke 120px hanya di HP (<=640px) — desktop tidak tertutupi. */
+/* 53299: (item 4) aturan a.btn:active mengembalikan rasa tekan tautan; tombol button asli TIDAK pernah menggelap saat ditekan — #EEF7F4 adalah warna :hover .btn.secondary, bukan :active. Efek tekan tombol asli ditambah di 5.3.301 via button.btn:active (aturan tekan-tombol-53301). (item 5) di modal Tes HP lengkung 280px menutupi teks progres; perkecil ke 120px hanya di HP (<=640px) — desktop tidak tertutupi. */
 a.btn:active{filter:brightness(.92);transform:translateY(1px)}
 @media (max-width:640px){#tes-modal-card .tesbox{background-size:120px}}
+</style>
+<style id="tekan-tombol-53301">
+button.btn:active{filter:brightness(.92);transform:translateY(1px)}
 </style>
 </head>
 <body id="atas">
@@ -2181,7 +2184,7 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
     <p style="color:var(--muted)">INSIGHT FROM THE ORIGIN: setiap rekomendasi berangkat dari kebutuhanmu, bukan dari produk yang sedang dipromosikan.</p>
     <p style="color:var(--muted);margin-top:10px">Caranya mengikuti tiga tahap: <strong>UNDERSTAND</strong> — pahami dulu kebutuhanmu, apa yang dirasakan dan apa yang sedang dicari; <strong>ORIENT</strong> — arahkan ke pilihan yang sesuai, dengan konteks dan perbandingannya dijelaskan sebelum kamu memutuskan; <strong>CHOOSE</strong> — pilih dengan yakin, setelah memahami alasannya.</p>
     <p style="color:var(--muted);margin-top:10px">Jalurnya: konten organik membuka pemahaman, halaman ini menjadi pusat navigasi, dan konsultasi serta pemesanan berjalan lewat WhatsApp admin.</p>
-    <p style="color:var(--muted);margin-top:10px">Hubungi OSL lewat WhatsApp 0859-1068-2269. Konsultasi seumur hidup: tanyakan dulu sebelum memilih.</p>
+    <p style="color:var(--muted);margin-top:10px">Hubungi OSL lewat WhatsApp 0859-1068-22669. Konsultasi seumur hidup: tanyakan dulu sebelum memilih.</p>
     <div class="cta-row"><a class="btn" data-event="order" data-order="chat langsung dengan tim OSL" data-source="Tentang OSL" href="https://wa.me/62859106822669?text=Halo%20OSL%2C%20saya%20mau%20konsultasi%20dulu%20sebelum%20memilih%20produk.%20Boleh%20dibantu%20pilihkan%20yang%20sesuai%20kebutuhan%20saya%3F%20(dari%20bagian%3A%20Tentang%20OSL)" style="background:#00FF66;color:#000;font-family:Arial;line-height:normal;text-align:center">Chat Admin OSL — Gratis</a><a class="btn btn-tes-final" href="#tes" style="background:var(--aqua);color:var(--navy);box-shadow:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>Mulai Tes Kebutuhan — 30 Detik</a><a class="ig-link" href="https://www.instagram.com/originsense.lab" target="_blank" rel="noopener">@originsense.lab</a></div>
   </div>
 </section>
@@ -2191,7 +2194,7 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
   <div class="wrap">
     <div class="sec-head">
       <h2>Pertanyaan yang paling sering muncul</h2>
-      <p>Masih ragu di antara dua produk? <button data-event="order" type="button" data-order="konsultasi memilih produk" data-source="FAQ" style="background:none;border:none;color:var(--teal);font:inherit;font-weight:700;cursor:pointer;text-decoration:underline;padding:0">Chat tim OSL untuk dibantu memilih</button>.</p>
+      <p>Masih ragu di antara dua produk? <a data-event="order" href="#" data-order="konsultasi memilih produk" data-source="FAQ" style="background:none;border:none;color:var(--teal);font:inherit;font-weight:700;cursor:pointer;text-decoration:underline;padding:0;display:inline-block;text-align:center">Chat tim OSL untuk dibantu memilih</a>.</p>
     </div>
     <details><summary>Apakah produk OSL aman?</summary><p>Produk yang dijual OSL ditampilkan dengan nomor izin BPOM per produk: buka langsung buktinya di sini — <a href="#verifikasi-modal" data-faq-bukti>🛡️ Lihat Bukti BPOM 5 Produk →</a> — atau cek mandiri di cekbpom.pom.go.id. Kelima produk sudah terdaftar, termasuk COFFIY. Setiap produk juga punya catatan konsultasi untuk kondisi khusus, seperti hamil, menyusui, atau pemakaian obat rutin. Baca blok produkmu dan konsultasikan bila ragu.</p></details>
     <details><summary>Kapan hasilnya terasa?</summary><p>Hasilnya bertahap dan berbeda pada tiap orang. Konsistensi pemakaian dan gaya hidup ikut berpengaruh. OSL tidak menjanjikan hasil dalam waktu tertentu.</p></details>
@@ -2201,7 +2204,7 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
   <details><summary>Berapa lama pengirimannya?</summary><p>Estimasi waktu kirim 1–3 hari. Setelah order, nomor resi dibagikan dan perjalanannya dipantau bersama hingga paket sampai.</p></details>
   <details><summary>Apakah ini obat?</summary><p>Bukan. Semua produk OSL adalah suplemen kesehatan, bukan obat.</p></details>
   <details><summary>Apakah aman untuk ibu hamil/menyusui?</summary><p>NOVIA: Tidak digunakan pada anak-anak, wanita hamil dan menyusui.<br>COFFIY: Tidak disarankan untuk anak-anak, ibu hamil, dan ibu menyusui.<br>DVN: Konsultasikan ke dokter sebelum konsumsi.<br>S-GLOW: Konsultasikan ke dokter sebelum konsumsi.<br>EROJAN: Produk untuk pria dewasa — bukan untuk wanita hamil/menyusui dan anak-anak.</p></details>
-  <details><summary>Apakah ada efek samping?</summary><p>Tiap produk beda catatannya — ini ringkasannya per produk:<br><br>DVN: tidak ada efek samping bernama yang tertulis di dokumen resmi. Konsultasikan dulu bila hamil, menyusui, atau sedang program hamil; sedang konsumsi obat rutin atau punya kondisi khusus; atau punya alergi terhadap bahan tertentu, termasuk kolagen ikan.<br><br>NOVIA: tidak ada efek samping bernama yang tertulis di dokumen resmi. Tidak digunakan oleh anak-anak, wanita hamil, dan menyusui; hindari pemakaian saat menstruasi; konsultasikan dulu bila sedang program hamil, memakai kontrasepsi atau terapi hormon, memakai pengencer darah atau obat rutin, atau memiliki kondisi sensitif hormon.<br><br>EROJAN: bahan-bahannya dinyatakan tidak mempunyai efek samping, tapi ada catatan untuk kondisi tertentu: hentikan bila sedang minum obat pengencer darah — horny goat weed dapat meningkatkan risiko pendarahan dan lebam; bila ingin mencoba, konsultasikan dulu ke dokter. Penderita tiroid (hipertiroidisme) perlu memperhatikan MACA — glukosinolat yang dikonsumsi berlebihan dan digabungkan dengan diet rendah iodin bisa menyebabkan goiter. Sebagian orang merasakan tubuh terasa panas atau gerah setelah mengonsumsi (tonik); bila suhu tubuhmu mudah naik, konsultasikan dulu ke dokter dan minum air yang cukup.<br><br>S-GLOW: tidak ada efek samping bernama yang tertulis di dokumen resmi. Konsultasikan dulu bila hamil, menyusui, atau sedang program hamil; sedang konsumsi obat rutin atau punya kondisi khusus; atau punya alergi terhadap bahan tertentu, termasuk kolagen laut.<br><br>COFFIY: sebagian orang merasakan suhu tubuh meningkat (hangat) setelah minum — ini reaksi yang dilaporkan dari testimoni. Minum 1–2 jam setelah makan supaya tidak terlalu kenyang dan tidak mengganggu magh. Tidak disarankan untuk wanita. Bila sedang dalam pengobatan penyakit jantung atau sensitif kafein, konsultasikan dulu ke dokter.<br><br>Bila ragu, konsultasikan dulu — gratis seumur hidup. Detail lengkap tiap produk ada di blok 'Sebaiknya konsultasi dulu jika…' di Detail produkmu.</p></details>
+  <details><summary>Apakah ada efek samping?</summary><p>Tiap produk beda catatannya — ini ringkasannya per produk:<br><br>DVN: tidak ada efek samping bernama yang tertulis di dokumen resmi. Konsultasikan dulu bila hamil, menyusui, atau sedang program hamil; sedang konsumsi obat rutin atau punya kondisi khusus; atau punya alergi terhadap bahan tertentu, termasuk kolagen ikan.<br><br>NOVIA: tidak ada efek samping bernama yang tertulis di dokumen resmi. Tidak digunakan oleh anak-anak, wanita hamil, dan menyusui; hindari pemakaian saat menstruasi; konsultasikan dulu bila sedang program hamil, memakai kontrasepsi atau terapi hormon, memakai pengencer darah atau obat rutin, atau memiliki kondisi sensitif hormon.<br><br>EROJAN: bahan-bahannya dinyatakan tidak mempunyai efek samping, tapi ada catatan untuk kondisi tertentu: hentikan bila sedang minum obat pengencer darah — horny goat weed dapat meningkatkan risiko pendarahan dan lebam; bila ingin mencoba, konsultasikan dulu ke dokter. Penderita tiroid (hipertiroidisme) perlu memperhatikan MACA — glukosinolat yang dikonsumsi berlebihan dan digabungkan dengan diet rendah iodin bisa menyebabkan gondok (pembengkakan kelenjar tiroid di leher). Sebagian orang merasakan tubuh terasa panas atau gerah setelah mengonsumsi (tonik); bila suhu tubuhmu mudah naik, konsultasikan dulu ke dokter dan minum air yang cukup.<br><br>S-GLOW: tidak ada efek samping bernama yang tertulis di dokumen resmi. Konsultasikan dulu bila hamil, menyusui, atau sedang program hamil; sedang konsumsi obat rutin atau punya kondisi khusus; atau punya alergi terhadap bahan tertentu, termasuk kolagen laut.<br><br>COFFIY: sebagian orang merasakan suhu tubuh meningkat (hangat) setelah minum — ini reaksi yang dilaporkan dari testimoni. Minum 1–2 jam setelah makan supaya tidak terlalu kenyang dan tidak mengganggu magh. Tidak disarankan untuk wanita. Bila sedang dalam pengobatan penyakit jantung atau sensitif kafein, konsultasikan dulu ke dokter.<br><br>Bila ragu, konsultasikan dulu — gratis seumur hidup. Detail lengkap tiap produk ada di blok 'Sebaiknya konsultasi dulu jika…' di Detail produkmu.</p></details>
   <details><summary>Berapa lama satu kemasan habis?</summary><p>DVN: 60 tablet untuk 30–60 hari (1–2 tablet per hari). NOVIA: 60 kapsul untuk 60 hari. EROJAN: 60 kapsul untuk 30 hari. S-GLOW: 60 tablet untuk 30–60 hari (tergantung usia). COFFIY: 10 sachet untuk 10 kali pakai.</p></details>
   </div>
 </section>
@@ -2224,7 +2227,7 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
 <section class="footer-strip">
   <div class="wrap">
     <p><b>OSL &mdash; Origin Sense Lab</b> &bull; Tempat untuk memahami sebelum memilih</p>
-    <p>WhatsApp <a href="https://wa.me/62859106822669?text=Halo%20OSL%2C%20saya%20mau%20konsultasi%20dulu%20sebelum%20memilih%20produk.%20Boleh%20dibantu%20pilihkan%20yang%20sesuai%20kebutuhan%20saya%3F%20(dari%20bagian%3A%20Footer)" target="_blank" rel="noopener">0859-1068-2269</a></p>
+    <p>WhatsApp <a href="https://wa.me/62859106822669?text=Halo%20OSL%2C%20saya%20mau%20konsultasi%20dulu%20sebelum%20memilih%20produk.%20Boleh%20dibantu%20pilihkan%20yang%20sesuai%20kebutuhan%20saya%3F%20(dari%20bagian%3A%20Footer)" target="_blank" rel="noopener">0859-1068-22669</a></p>
     <p>Konsultasi gratis seumur hidup &bull; Uang kembali kalau produk gak asli &bull; Gratis ongkir &bull; COD seluruh Indonesia &bull; Resi dibagikan dan dipantau bersama &bull; Produk suplemen kesehatan</p>
   </div>
 </section>
@@ -2233,7 +2236,7 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
   <div class="wrap">
     <p><b>OSL — Origin Sense Lab</b> • INSIGHT FROM THE ORIGIN</p>
     <p><a href="#tes">Tes 30 Detik</a> • <a href="#koleksi">Koleksi</a> • <a href="#cerita-membership">Cerita</a> • <a href="#tentang-osl">Tentang</a> • <a href="#faq">FAQ</a> • <a href="#atas">Kembali ke atas ↑</a></p>
-    <p style="margin-top:6px">Instagram: <a href="https://www.instagram.com/originsense.lab" target="_blank" rel="noopener">@originsense.lab</a> • Chat dan pemesanan melalui WhatsApp <a href="https://wa.me/62859106822669?text=Halo%20OSL%2C%20saya%20mau%20konsultasi%20dulu%20sebelum%20memilih%20produk.%20Boleh%20dibantu%20pilihkan%20yang%20sesuai%20kebutuhan%20saya%3F%20(dari%20bagian%3A%20Footer)" target="_blank" rel="noopener">0859-1068-2269</a>.</p>
+    <p style="margin-top:6px">Instagram: <a href="https://www.instagram.com/originsense.lab" target="_blank" rel="noopener">@originsense.lab</a> • Chat dan pemesanan melalui WhatsApp <a href="https://wa.me/62859106822669?text=Halo%20OSL%2C%20saya%20mau%20konsultasi%20dulu%20sebelum%20memilih%20produk.%20Boleh%20dibantu%20pilihkan%20yang%20sesuai%20kebutuhan%20saya%3F%20(dari%20bagian%3A%20Footer)" target="_blank" rel="noopener">0859-1068-22669</a>.</p>
     <p style="margin-top:12px">Disclaimer: Produk suplemen membantu memelihara kesehatan dan bukan pengganti obat atau diagnosis medis. Konsultasikan dengan tenaga kesehatan bila hamil, menyusui, memiliki kondisi khusus, atau sedang mengonsumsi obat rutin.</p>
   </div>
   <div class="giant" aria-hidden="true">Origin Sense Lab</div>
@@ -2293,9 +2296,9 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
         </div>
         <div class="cta-row" style="margin-top:6px">
           <button class="btn" id="rec-consult" data-event="konsultasi" type="button">Kirim Hasil Tes WA Konsultasi Gratis</button>
-          <button class="btn secondary" id="rec-order" data-event="order" type="button">Tanya &amp; Order</button>
+          <a class="btn secondary" id="rec-order" href="#tes" data-event="order" style="font-family:Arial;line-height:normal;text-align:center">Tanya &amp; Order</a>
           <p class="offer-label hidden" id="rec-offer-label">Mau sekalian pendampingnya?</p>
-          <div class="cta-row offer-row hidden" id="rec-offer-row" style="margin-top:8px"><button class="btn secondary order-offer" id="rec-deal" data-event="order-deal" type="button">Tanya &amp; Order Best Deal — EROJAN + COFFIY · Rp1.428.000</button></div>
+          <div class="cta-row offer-row hidden" id="rec-offer-row" style="margin-top:8px"><a class="btn secondary order-offer" id="rec-deal" href="#tes" data-event="order-deal" style="font-family:Arial;line-height:normal;text-align:center">Tanya &amp; Order Best Deal — EROJAN + COFFIY · Rp1.428.000</a></div>
           <button class="btn secondary" id="tes-restart" type="button">Ulangi Tes</button>
         </div>
         <p style="font-size:.85rem;color:var(--muted);margin-top:12px">Hasil ini panduan awal, bukan diagnosis. Tim OSL akan memastikan kecocokan sebelum kamu bayar.</p>
@@ -2653,7 +2656,7 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
 <p><b>Apakah EROJAN mengganggu tidur?</b></p>
 <p>EROJAN tidak mengganggu tidur. Namun, jika kamu mengalami masalah tidur, disarankan mengonsumsi EROJAN pada pagi hari.</p>
 <p><b>Bolehkah penderita dialisis mengonsumsi EROJAN?</b></p>
-<p>Tidak disarankan jika sedang menjalani dialisis. Konsultasikan ke dokter sebelum mengonsumsi suplemen atau herbal jika memiliki kondisi kesehatan tertentu.</p>
+<p>Tidak disarankan jika sedang menjalani dialisis. Konsultasikan dulu ke dokter sebelum mengonsumsi suplemen atau herbal jika memiliki kondisi kesehatan tertentu.</p>
 <p><b>Bolehkah penderita kemoterapi atau radioterapi mengonsumsi EROJAN?</b></p>
 <p>Tidak disarankan mengonsumsi suplemen atau obat tambahan di luar saran dokter jika sedang menjalani radioterapi atau kemoterapi. Hentikan selama 2 minggu sebelum menjalani operasi, dan konsumsi kembali setelah 30 hari dari proses pemulihan atau luka sembuh.</p>
 <p><b>Bolehkah penderita G6PD mengonsumsi EROJAN?</b></p>
@@ -2663,13 +2666,13 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
 <p><b>Apa yang terjadi jika wanita tidak sengaja mengonsumsi EROJAN?</b></p>
 <p>Tidak perlu khawatir, karena tidak akan memberikan efek buruk kepada wanita. Namun suplemen ini dikhususkan untuk pria.</p>
 <p><b>Bolehkah pengguna obat pengencer darah mengonsumsi EROJAN?</b></p>
-<p>Hentikan konsumsi EROJAN jika sedang minum obat pengencer darah, karena horny goat weed dapat meningkatkan risiko pendarahan dan lebam. Konsultasikan ke dokter sebelum mencoba kembali.</p>
+<p>Hentikan konsumsi EROJAN jika sedang minum obat pengencer darah, karena horny goat weed dapat meningkatkan risiko pendarahan dan lebam. Konsultasikan dulu ke dokter sebelum mencoba kembali.</p>
 <p><b>Bolehkah EROJAN dikonsumsi bersamaan dengan obat dari dokter?</b></p>
 <p>Belum ada penelitian yang menyatakan EROJAN memiliki interaksi dengan obat ataupun produk kesehatan lainnya. Namun disarankan konsumsi 2 jam sebelum mengonsumsi obat.</p>
 <p><b>Bolehkah penderita tiroid mengonsumsi EROJAN?</b></p>
-<p>Penderita tiroid (hipertiroidisme) perlu memperhatikan MACA, karena glukosinolat yang terkandung di dalamnya jika dikonsumsi berlebihan dan digabungkan dengan diet rendah iodin, bisa menyebabkan goiter.</p>
+<p>Penderita tiroid (hipertiroidisme) perlu memperhatikan MACA, karena glukosinolat yang terkandung di dalamnya jika dikonsumsi berlebihan dan digabungkan dengan diet rendah iodin, bisa menyebabkan gondok (pembengkakan kelenjar tiroid di leher).</p>
 <p><b>Bolehkah penyintas diabetes mengonsumsi EROJAN?</b></p>
-<p>Penderita diabetes boleh mengonsumsi EROJAN, namun harus tetap mengonsumsi obat untuk mengontrol gula darah. Konsultasikan ke dokter mengenai dosis awal yang sesuai untukmu.</p>
+<p>Penderita diabetes boleh mengonsumsi EROJAN, namun harus tetap mengonsumsi obat untuk mengontrol gula darah. Konsultasikan dulu ke dokter mengenai dosis awal yang sesuai untukmu.</p>
 <p><b>Bolehkah pengguna obat darah tinggi dan sakit jantung mengonsumsi EROJAN?</b></p>
 <p>Disarankan konsultasi ke dokter sebelum mengonsumsi EROJAN, karena Tribulus Terrestris bisa memiliki interaksi terhadap obat ini.</p>
 <p><b>Bolehkah pengguna terapi penggantian androgen (ART) atau terapi hormon lain mengonsumsi EROJAN?</b></p>
@@ -2797,7 +2800,7 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
             <ul><li>Sensitif terhadap kafein</li><li>Sedang konsumsi obat rutin atau punya kondisi khusus</li></ul>
           </div>
         </div>
-<p class="finalnote" style="margin-top:10px">COFFIY terdaftar di BPOM RI dengan nomor MD 867031569523. Simpan di tempat sejuk di bawah 28°C, jauhkan dari sinar matahari langsung dan jangkauan anak-anak. Harga tertera = total yang kamu bayar (ongkir sudah termasuk, tanpa syarat). Tim OSL mengonfirmasi pesananmu lewat chat sebelum pembayaran.</p>
+<p class="finalnote" style="margin-top:10px">COFFIY terdaftar di BPOM RI dengan nomor RI MD 867031569523. Simpan di tempat sejuk di bawah 28°C, jauhkan dari sinar matahari langsung dan jangkauan anak-anak. Harga tertera = total yang kamu bayar (ongkir sudah termasuk, tanpa syarat). Tim OSL mengonfirmasi pesananmu lewat chat sebelum pembayaran.</p>
 <p><b>Bedanya dengan EROJAN apa?</b></p>
 <p>EROJAN dipakai rutin setiap hari untuk membantu memelihara stamina. COFFIY adalah kopi pendamping untuk saat dibutuhkan saja.</p>
 <p><b>Detail isinya apa?</b></p>
@@ -3126,7 +3129,7 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
     resultBox.classList.remove('hidden');
     renderTrace();
     /* 5394: #rec-consult kini membuka #konsultasi-modal (handler di blok 5394). */
-    document.getElementById('rec-order').onclick = function(){
+    document.getElementById('rec-order').onclick = function(e){ if(e) e.preventDefault();
       var _m;
       var _pk = rec;
       if(rec.indexOf('Best Deal') > -1 || rec.indexOf('+') > -1){
@@ -3138,7 +3141,7 @@ a.btn:active{filter:brightness(.92);transform:translateY(1px)}
       if(window.OSL_openKonsultasi){ window.OSL_openKonsultasi(document.getElementById('rec-order'), _m, _pk); } else { window.open("https://wa.me/62859106822669?text=" + encodeURIComponent(_m), "_blank"); }
     };
     /* 53290 (P2-6): tombol tawaran Best Deal ke-3 — picu cabang paket secara eksplisit atas nama 'Best Deal EROJAN + COFFIY' (cabang rec-order yang mati tidak pernah tercapai karena rec tidak pernah mengandung '+'). */
-    document.getElementById('rec-deal').onclick = function(){
+    document.getElementById('rec-deal').onclick = function(e){ if(e) e.preventDefault();
       var _m = orderMessage('Best Deal EROJAN + COFFIY', "Tes Kebutuhan");
       if(window.OSL_openKonsultasi){ window.OSL_openKonsultasi(document.getElementById('rec-deal'), _m, 'Best Deal EROJAN + COFFIY'); } else { window.open("https://wa.me/62859106822669?text=" + encodeURIComponent(_m), "_blank"); }
     };
